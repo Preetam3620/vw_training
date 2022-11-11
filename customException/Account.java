@@ -1,7 +1,6 @@
-package customException1;
+package customException;
 
-
-public class Account implements Comparable<Account> {
+public class Account {
 	private String accountHolderName;
 	private int accNo;
 	private double balance;
@@ -36,14 +35,12 @@ public class Account implements Comparable<Account> {
 	public void deposit(double amount) {
 		this.balance += amount;
 	}
-	public double withdraw(double amount) throws InsufficientBalancException, ZeroBalanceException {
-		if (amount <= balance) {
-			this.balance -= amount;	
-			if(balance == 0) {
-				throw new ZeroBalanceException(this.balance, amount, this.accNo);
-			}
+	public double withdraw(double amount) throws InsufficientBalancException {
+		if (amount < balance) {
+			this.balance -= amount;			
 			System.out.println("Current balance is: " + this.balance + " after withdrawing amount: " + amount);
-		} else {			
+		}
+		else {
 			throw new InsufficientBalancException(this.balance, amount, this.accNo);
 		}
 		return amount;
@@ -51,22 +48,7 @@ public class Account implements Comparable<Account> {
 
 	@Override
 	public String toString() {
-		return "\nAccount [accountHolderName=" + accountHolderName + ", accNo=" + accNo + ", balance=" + balance + "]";
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof Account)
-			return this.accNo == ((Account) obj).accNo;
-		else
-			return false;
-	}
-	
-
-	@Override
-	public int compareTo(Account ac) {
-		System.out.println("compared accNo=" + this.accNo + " to e.accNo=" + ac.accNo);
-		return this.accNo - ac.accNo;
+		return "Account [accountHolderName=" + accountHolderName + ", accNo=" + accNo + ", balance=" + balance + "]";
 	}
 		
 }

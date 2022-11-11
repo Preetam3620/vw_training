@@ -1,5 +1,4 @@
-package customException1;
-
+package basicTest;
 
 public class Account implements Comparable<Account> {
 	private String accountHolderName;
@@ -55,6 +54,12 @@ public class Account implements Comparable<Account> {
 	}
 	
 	@Override
+	public int hashCode() {
+		return this.accNo;
+	}
+
+	
+	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof Account)
 			return this.accNo == ((Account) obj).accNo;
@@ -62,10 +67,9 @@ public class Account implements Comparable<Account> {
 			return false;
 	}
 	
-
 	@Override
 	public int compareTo(Account ac) {
-		System.out.println("compared accNo=" + this.accNo + " to e.accNo=" + ac.accNo);
+		System.out.println("compared accNo=" + this.accNo + " to ac.accNo=" + ac.accNo);
 		return this.accNo - ac.accNo;
 	}
 		
