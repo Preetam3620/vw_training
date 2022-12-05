@@ -1,0 +1,34 @@
+In this post, We will learn about the Spring @Autowired Annotation With Constructor 
+Injection Example using a Demo Project.
+
+Spring Dependency Injection
+
+The dependency Injection is a fundamental aspect of the Spring framework through which 
+the Spring framework container injects objects or instances into other objects or 
+“dependencies”.
+In another word, We can say that dependency Injection promotes loose coupling of software 
+components and moves the responsibility of managing components onto the Spring container.
+
+Types of Spring Dependency Injection:
+
+Setter Based Dependency Injection
+Constructor Based Dependency Injection 
+
+Setter Based Dependency Injection:
+In setter-based DI, the container will call setter methods of the class after invoking a 
+no-argument constructor or no-argument static factory method to instantiate the bean.
+
+Constructor Based Dependency Injection:
+The constructor-based dependency injection is accomplished when the Spring container 
+invokes a class constructor with a number of arguments and each representing a dependency 
+on the other class.
+
+When to use setter injection and constructor injection?
+The Spring documentation recommends using constructor-based injection for mandatory 
+dependencies, and setter-based injection for optional Dependency
+
+@Autowired annotation
+Spring @Autowired annotation is mainly used for automatic dependency injection. 
+This annotation may be applied to before class variables and methods for auto wiring 
+byType. We can also use @Autowired annotation on the constructor for constructor-based 
+spring auto wiring.

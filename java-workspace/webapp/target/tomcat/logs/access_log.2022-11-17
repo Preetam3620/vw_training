@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [17/Nov/2022:12:21:35 +0530] "GET /webapp/ HTTP/1.1" 200 57 http-bio-9090-exec-1 1481
+0:0:0:0:0:0:0:1 - - [17/Nov/2022:12:21:51 +0530] "GET /webapp/hello?myname=peter HTTP/1.1" 200 55 http-bio-9090-exec-2 5

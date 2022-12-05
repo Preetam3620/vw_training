@@ -1,0 +1,17 @@
+MVC Design Pattern:-
+ 
+model - plain java bean/pojo class that stores that like Employee, Account, Book etc
+         --to hold member data along with member functions 
+
+view - jsp / html pages - take i/p or show output
+ 
+controller - JEE API- servlet class, Spring framework (any class annotated with @Controller)
+
+        Front Controller - responsible for deciding flow of your application
+              -- request mapping - map to which controller? which method? 
+
+        Business Controllers like EmpController, LoginController etc
+             -- business methods related that controller
+                   -- modify data of model classes in some wat
+
+        controller will select the view to show final model data

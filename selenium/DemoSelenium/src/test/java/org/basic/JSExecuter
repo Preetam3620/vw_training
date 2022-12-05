@@ -1,0 +1,21 @@
+JavaScriptExecuter is an interface in selenium library which helps to execute java script on the browser.
+This can be used to work on elemnets when locators fail to loacte them.
+Useful when ElementClickInterceptedException/ElementNotInteractableException is encountred.
+executeScript Method: This method executes JavaScript in the context of the currently selected frame or window in Selenium
+
+Syntax:
+JavascriptExecutor js = (JavascriptExecutor) driver;  
+js.executeScript(Script,Arguments);
+
+Script – This is the JavaScript that needs to execute.
+Arguments – It is the arguments to the script. It's optional.
+
+e.g. 
+JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,500)");
+
+e.g.
+WebElement ele = driver.findElements(locator);
+JavascriptExecutor executor = (JavascriptExecutor)driver;
+executor.executeScript("arguments[0].click()", ele);
+executor.executeScript("arguments[0].value='text'", ele);
